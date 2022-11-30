@@ -24,13 +24,8 @@ id -> .firstname
     </script>
 
     <style>
-        @media(min-width: 400px)
-          div {
-              display: none;
-          }
-
         h1 {
-          display: block;
+          width: 900px;
           text-align: center;
           padding: 15px;
           margin: 20px;
@@ -62,12 +57,35 @@ id -> .firstname
           display: grid;
           grid-template-columns: 350px 1fr;
         }
+        td {
+          text-align: center;
+          padding: 5px;
+        }
+
+        body {
+          background-color: #FAF8F5;
+        }
+        @media screen and (max-width: 400px) {
+          #grid {
+              display: block;
+          }
+          #intro ul, ol {
+            border-right: none;
+          }
+          h1 {
+            border-bottom: none;
+          }
+          body {
+            background-color: white;
+          }
+        }
+
     </style>
 
   </head>
 
   <body>
-    <h1><a href="index.html" style="color:green">Chanju Kim의 Life Portfolio입니다!</a></h1>
+    <h1><a href="index.html" style="color:green">🌳🌳🌳 Chanju Kim의 Life Portfolio입니다! 🌳🌳🌳</a></h1>
 
     <div id="grid">
       <div id="intro">
@@ -89,34 +107,35 @@ id -> .firstname
       </p>
     </div>
 
-    <p style="margin-top:40px;">
-      <h2 style="margin-bottom:10px;">현재하고 있는 것</h2>
-      -> 나만의 <strong style="color:pink"><u>웹페이지 만들기</u></strong> 기초<br>
-      -> 언어: HTML + CSS + JS<br>
-      -> 에디터: Atom<br>
-      -> 호스팅: github<br>
-      -> 페이지 특성: 정적<br>
-      -> 댓글 기능: disqus<br>
-      -> 채팅 기능: twak.to
-    </p>
+    <div id="grid">
+      <div style="margin-top:40px;">
+        <h2 style="margin-bottom:10px;">현재하고 있는 것</h2>
+        -> 나만의 <strong style="color:pink"><u>웹페이지 만들기</u></strong> 기초<br>
+        -> 언어: HTML + CSS + JS<br>
+        -> 에디터: Atom<br>
+        -> 호스팅: github<br>
+        -> 페이지 특성: 정적<br>
+        -> 댓글 기능: disqus<br>
+        -> 채팅 기능: twak.to
+      </div>
+      <div style="margin-top:40px;">
+        <h2 style="margin-bottom:5px;">RoadMap</h2>
+        <table>
+          <tr>
+            <td>날짜</td>
+            <td>할 일</td>
+            <td>이행 여부</td>
+          </tr>
+          <tr>
+            <td >2022-11-30-수</td>
+            <td style="text-decoration: underline;">웹개발기초 공부</td>
+            <td ><input type="checkbox" checked>
+          </tr>
+        </table>
+      </div>
+    </div>
 
-    <p style="margin-top:40px;">
-      <h3>table</h3>
-      <table>
-        <tr>
-          <td>날짜</td>
-          <td>할 일</td>
-          <td>이행 여부</td>
-        </tr>
-        <tr>
-          <td >2022-11-30-수</td>
-          <td style="text-decoration: underline;">웹개발기초 공부</td>
-          <td ><input type="checkbox">
-        </tr>
-      </table>
-    </p>
-
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread" style="margin-top: 60px"></div>
     <script>
         /**
         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
