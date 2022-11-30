@@ -12,6 +12,7 @@ id -> .firstname
   <head>
     <title>ChanjuKim's Portfolio</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E3H4QWVB38"></script>
@@ -22,77 +23,13 @@ id -> .firstname
 
       gtag('config', 'G-E3H4QWVB38');
     </script>
-
-    <style>
-        h1 {
-          width: 900px;
-          text-align: center;
-          padding: 15px;
-          margin: 20px;
-          border-bottom: 1px gray solid;
-          margin-bottom: 0px;
-        }
-        a {
-          color:blue;
-          text-decoration: none;
-        }
-        .saw {
-          color: gray;
-        }
-        #active {
-          color: red
-        }
-        }
-        h3 {
-          font-size: 22px;
-        }
-        #intro ul, ol {
-          border-right: 1px solid gray;
-          width: 250px;
-          margin: 0px;
-          margin-left: 30px;
-          padding: 20px;
-        }
-        #grid {
-          display: grid;
-          grid-template-columns: 350px 600px;
-        }
-        td {
-          text-align: center;
-          padding: 5px;
-        }
-        #grid div{
-          margin-left: 20px;
-          margin-top: 0px;
-          padding-bottom: 20px;
-        }
-        body {
-          background-color: #FAF8F5;
-        }
-        @media screen and (max-width: 400px) {
-          #grid {
-              display: block;
-          }
-          #intro ul, ol {
-            border-right: none;
-          }
-          h1 {
-            border-bottom: none;
-          }
-          body {
-            background-color: white;
-          }
-        }
-
-    </style>
-
   </head>
 
   <body>
-    <h1><a href="index.html" style="color:green">🌳🌳🌳 Chanju Kim의 Life Portfolio입니다! 🌳🌳🌳</a></h1>
+    <h1><a href="index.html" style="color:#00D26A">🍀 Chanju Kim의 Dev.💻 Portfolio입니다! 🍀</a></h1>
 
-    <div id="grid">
-      <div id="intro">
+    <div id="grid" style="border-bottom: 1px gray solid; width: 930px; margin-left:20px;">
+      <div id="intro" style="border-right: 1px solid gray">
         <ul>
           <li><a href="https://blog.naver.com/fly_juice" target="_blank" title="놀러올거냥?">찬주의 창업 블로그 방문하기</a></li>
           <li><a href="introduce.html">소개</a></li>
@@ -104,36 +41,56 @@ id -> .firstname
           <li>기획</li>
         </ol>
       </div>
-      <p style="margin-top:0px padding=20px">
+      <div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/fxdPHw8vhog" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <br>
         나의 Motivation 영상
-      </p>
+      </div>
     </div>
 
-    <div id="grid">
-      <div style="border-right: 1px solid gray">
-        <h2 style="margin-bottom:10px; display: inline;">현재하고 있는 것</h2><br>
-        -> 나만의 <strong style="color:pink"><u>웹페이지 만들기</u></strong> 기초<br>
+    <div id="grid" style="border-bottom: 1px gray solid; width: 930px; margin-left:20px;">
+      <div style="border-right: 1px solid gray" id="in">
+        <h2 style="margin-bottom: 10px">현재하고 있는 것</h2>
+        -> 나만의 <strong style="color:red"><u>웹페이지 만들기</u></strong> 기초<br>
         -> 언어: HTML + CSS + JS<br>
-        -> 에디터: Atom<br>
+        -> <s>에디터: Atom</s><br>&nbsp;&nbsp;&nbsp;
+              프레임워크: VScode<br>&nbsp;&nbsp;&nbsp;
+              (22-11-30-수 변경)<br>
         -> 호스팅: github<br>
         -> 페이지 특성: 정적<br>
         -> 댓글 기능: disqus<br>
         -> 채팅 기능: twak.to
       </div>
-      <div>
-        <h2 style="margin-bottom:5px;">RoadMap</h2>
+      <div id="in">
+        <h2 style="border: pink 3px solid; background-color: white;">🏋️ RoadMap 🏋️</h2>
         <table>
           <tr>
-            <td>날짜</td>
-            <td>할 일</td>
+            <td>시작 날짜</td>
+            <td>공부 영역</td>
             <td>이행 여부</td>
+            <td>완료 날짜</td>
+            <td>교재, 강좌</td>
           </tr>
           <tr>
-            <td >2022-11-30-수</td>
-            <td style="text-decoration: underline;">웹개발기초 공부</td>
-            <td ><input type="checkbox" checked>
+            <td>2022-11-30-수</td>
+            <td>HTML 기초</td>
+            <td><input type="checkbox" checked>
+            <td>2022-11-30-수</td>
+            <td>생활코딩 기초<td>
+          </tr>
+          <tr>
+            <td>2022-11-30-수</td>
+            <td>CSS 기초</td>
+            <td><input type="checkbox" checked>
+            <td>2022-11-30-수</td>
+            <td>생활코딩 기초<td>
+          </tr>
+          <tr>
+            <td>2022-12-01-목</td>
+            <td>JS 기초</td>
+            <td><input type="checkbox">
+            <td>2022-12-01-목</td>
+            <td>생활코딩 기초<td>
           </tr>
         </table>
       </div>
