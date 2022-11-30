@@ -55,13 +55,17 @@ id -> .firstname
         }
         #grid {
           display: grid;
-          grid-template-columns: 350px 1fr;
+          grid-template-columns: 350px 600px;
         }
         td {
           text-align: center;
           padding: 5px;
         }
-
+        #grid div{
+          margin-left: 20px;
+          margin-top: 0px;
+          padding-bottom: 20px;
+        }
         body {
           background-color: #FAF8F5;
         }
@@ -108,8 +112,8 @@ id -> .firstname
     </div>
 
     <div id="grid">
-      <div style="margin-top:40px;">
-        <h2 style="margin-bottom:10px;">현재하고 있는 것</h2>
+      <div style="border-right: 1px solid gray">
+        <h2 style="margin-bottom:10px; display: inline;">현재하고 있는 것</h2><br>
         -> 나만의 <strong style="color:pink"><u>웹페이지 만들기</u></strong> 기초<br>
         -> 언어: HTML + CSS + JS<br>
         -> 에디터: Atom<br>
@@ -118,7 +122,7 @@ id -> .firstname
         -> 댓글 기능: disqus<br>
         -> 채팅 기능: twak.to
       </div>
-      <div style="margin-top:40px;">
+      <div>
         <h2 style="margin-bottom:5px;">RoadMap</h2>
         <table>
           <tr>
