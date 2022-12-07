@@ -30,7 +30,7 @@ td {
   display: grid;
   grid-template-columns: 300px 600px;
   border-bottom: 1px gray solid;
-  width: 930px;
+  width: 900px;
   margin-left:20px;
 }
 
