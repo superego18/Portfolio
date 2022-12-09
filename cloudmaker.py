@@ -50,25 +50,17 @@ for content in contents:
 # 텍스트 임의 제거
 '''
 remove_list=['수','것']
-for i in range(len(remove_list)):
-    nope = remove_list[i]
-    j = list.count(nope)
-    while j > 0:
-        list.remove(nope)
-        j = j-1
+for nope in remove_list:
+    while nope in nouns:
+        nouns.remove(nope)
 '''
 
 # 텍스트 임의 변경
-translate_list=[[['크롤','롤링'],'크롤링'],[['테이블'],'스테이블']]
-for i in range(len(translate_list)):
-    for j in range(len(translate_list[i][0])):
-        nope = translate_list[i][0][j]
-        yeap = translate_list[i][1]
-        k = list.count(nope)
-        while k > 0:
-            list.remove(nope)
-            list.append(yeap)
-            k = k-1
+translate_list = [['크롤', '크롤링'], ['롤링', '크롤링'], ['테이블', '스테이블']]
+for old, new in translate_list:
+    while old in list:
+        list.remove(old)
+        list.append(new)
 
 
 from wordcloud import WordCloud
@@ -81,7 +73,7 @@ mask = np.array(img) # 픽셀 값 배열 형태 변환
 
 word_counts = Counter(list)
   
-wordcloud = WordCloud(font_path='malgun',  background_color="white", colormap='Greens', width = 700, height = 700, random_state = 43, max_font_size=60, mask=mask).generate_from_frequencies(word_counts)
+wordcloud = WordCloud(font_path='malgun',  background_color="black", colormap='Greens', width = 700, height = 700, random_state = 43, max_font_size=60, mask=mask).generate_from_frequencies(word_counts)
 
 plt.figure(figsize = (6,6))
 plt.imshow(wordcloud, interpolation="bilinear")
