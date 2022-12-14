@@ -51,3 +51,10 @@ p {
   margin: 0px;
   padding: 0px;
 }
+
+#center_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}

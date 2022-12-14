@@ -53,7 +53,7 @@ mask = np.array(img) # 픽셀 값 배열 형태 변환
 
 word_counts = collections
   
-wordcloud = WordCloud(font_path='malgun',  background_color="black", colormap='Reds', width = 700, height = 700, random_state = 43, max_font_size=80, mask=mask).generate_from_frequencies(word_counts)
+wordcloud = WordCloud(font_path='malgun',  background_color="black", colormap='Reds', width = 500, height = 500, random_state = 43, max_font_size=80, mask=mask).generate_from_frequencies(word_counts)
 
 plt.figure(figsize = (6,6))
 plt.imshow(wordcloud, interpolation="bilinear")
