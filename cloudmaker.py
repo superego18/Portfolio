@@ -68,7 +68,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
 
-img = Image.open('son.png') # 이미지 파일 읽어오기
+img = Image.open('image-removebg-preview.png') # 이미지 파일 읽어오기
 mask = np.array(img) # 픽셀 값 배열 형태 변환
 
 word_counts = Counter(list)
