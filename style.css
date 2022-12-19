@@ -2,6 +2,12 @@ body {
   background-color: black;
   color: white;
 }
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+  }
+}
 
 h1 {
   width: 900px;
