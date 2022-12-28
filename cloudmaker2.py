@@ -56,11 +56,15 @@ for nope in remove_list:
 '''
 
 # 텍스트 임의 변경
-translate_list = [['크롤', '크롤링'], ['롤링', '크롤링'], ['테이블', '스테이블'],['설제','제설제']]
+translate_list = [['크롤', '크롤링'], ['롤링', '크롤링'], ['테이블', '스테이블'],['설제','제설제'],['메타','메타버스']]
+remove_list=['버스']
 for old, new in translate_list:
     while old in list:
         list.remove(old)
         list.append(new)
+for unuse in remove_list:
+    while unuse in list:
+        list.remove(unuse)
 
 
 from wordcloud import WordCloud
