@@ -1,24 +1,19 @@
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-from PIL import Image
 import numpy as np
+from sklearn.linear_model import LinearRegression
 
-icon = Image.open('image-removebg-preview.png') # 이미지 파일 읽어오기
-mask = Image.new("RGB", icon.size, (255,255,255))
-mask.paste(icon,icon)
-mask_img = np.array(mask) # 픽셀 값 배열 형태 변환
+X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]])
+y = np.array([17, 20, 35]).transpose
 
-# def transform_zeros(val):
-#     if val == 0:
-#         return 255
-#     else:
-#         return val
+# # 첫번째 방법
+# model = LinearRegression()
+# model.fit(X,y)
 
-# maskable_image = np.ndarray((mask_img.shape[0],mask_img.shape[1]), np.int32)
+# # 두번째 방법
+# beta = np.linalg.pinv(X) @ y
+# y_test = np.append(X) @ beta
 
-# for i in range(len(mask_img)):
-#     maskable_image[i] = list(map(transform_zeros, mask_img[i]))
+X_ = np.array([np.append(x,[1]) for x in X])
+print(X_)
 
-print(mask_img)
-
-np.savetxt('test.txt', mask_img, fmt = '%3d', delimiter = ',', header='test')  
+print(np.linalg.pinv(X) @ y)
+print(np.linalg.pinv(X_) @ y)
