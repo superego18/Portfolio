@@ -5,12 +5,12 @@ body {
 @media only screen {
 	body {
 		margin: 2em auto;
-		max-width: 900px;
+		max-width: 1500px;
   }
 }
 
 h1 {
-  width: 900px;
+  width: 1500px;
   text-align: center;
   padding: 15px;
   margin: 20px;
@@ -34,9 +34,8 @@ td {
 
 #grid {
   display: grid;
-  grid-template-columns: 300px 600px;
-  border-bottom: 1px gray solid;
-  width: 900px;
+  grid-template-columns: 300px 600px 600px;
+  width: 1500px;
   margin-left:20px;
 }
 
@@ -45,12 +44,9 @@ td {
   padding: 20px;
 }
 
-#bottom {
-  border-bottom: 1px gray solid;
-}
-
 #right {
   border-right: 1px solid gray;
+  border-bottom: 1px gray solid;
 }
 
 p {
