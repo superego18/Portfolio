@@ -9,17 +9,24 @@ body {
   }
 }
 
-h1 {
+#title {
   width: 1500px;
   text-align: center;
-  padding: 15px;
+  padding: 15px;  
   margin: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-weight: bold;
+  font-size: 65px;
+  font-family: 'NanumBarunGothicBold';
 }
 
-h2 {
+#title2 {
   margin: 0px;
   text-align: center;
   margin-bottom: 5px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 a {
@@ -34,9 +41,14 @@ td {
 
 #grid {
   display: grid;
-  grid-template-columns: 300px 600px 600px;
+  grid-template-columns: 750px 750px;
   width: 1500px;
-  margin-left:20px;
+  margin-left: 20px;
+  margin-bottom: 100px;
+  padding:0px;
+  background-color: rgba(226, 201, 201, 0.116);
+  border: none;
+  border-radius: 30px;
 }
 
 #grid div {

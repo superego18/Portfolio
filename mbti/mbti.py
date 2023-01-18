@@ -32,8 +32,8 @@ ax.tick_params(axis='y', colors='white')
 
 # ax.axvspan(70,80, facecolor='gray', alpha=0.6) # 부분 색칠 - 각도
 
-ax.plot(label_loc, grades1, label='MBTI', linestyle='solid', color='red')
-ax.fill(label_loc, grades1, color='red', alpha=0.5) 
+ax.plot(label_loc, grades1, label='MBTI', linestyle='solid', color='blue')
+ax.fill(label_loc, grades1, color='blue', alpha=0.5) 
 ax.legend()
 plt.savefig('mbti/mbti1.png')
 plt.show(block=False)

@@ -30,9 +30,9 @@ id -> .firstname
     
 
   <body>
-    <h1><a href="index.html" style="color:#00D26A">🍀 Chanju Kim의 Dev.💻 Portfolio입니다! 🍀</a></h1>
+    <p id="title"><a href="index.html" style="color:#00D26A">AI Engineer Portfolio <span style="font-size: 30px; color: wheat">by Chanju Kim</span></a></p>
 
-    <div id= "navi">
+    <div id="navi">
       <button type="button" onclick="window.open('https://blog.naver.com/fly_juice');">
         <img src="./navilogo/blog.png" style="width: 50%">
         Blog</button>
@@ -54,38 +54,68 @@ id -> .firstname
       <button type="button" onclick="window.open('https://types.my/quiz/11318872');">
         <img src="./navilogo/types.png" style="width: 50%">
         Types</button>
+        <button type="button" onclick="">
+          <!-- <img src="./navilogo/types.png" style="width: 50%"> -->
+          Hello, Friends!</button>
     </div>
-
-    <div id="grid">
-      <div id="right">
-        <p>
-        <h2 style="margin-bottom: 10px">현재하고 있는 것</h2>
-        -> 나만의 <strong style="color:red"><u>웹페이지 만들기</u></strong> 기초<br>
-        -> 언어: HTML + CSS + JS
-        </p><br>
-        <p>
-        -> <s>에디터: Atom</s><br>
-        &nbsp;&nbsp;&nbsp;프레임워크: VScode<br>
-        &nbsp;&nbsp;&nbsp;(22-11-30-수 변경)<br>
-        -> 호스팅: github<br>
-        -> 버전관리: git<br>
-        -> 페이지 특성: 동적
-        </p><br>
-        <p>
-        -> 댓글: <s>disqus</s><br>
-        &nbsp;&nbsp;&nbsp;giscus (GitHub App)<br>
-        &nbsp;&nbsp;&nbsp;(22-12-07-수 변경)<br>
-        -> 채팅: twak.to<br>
-        -> 내비게이션: UIVERSE
-        </p><br>
-        <p>
-          -> 워드클라우드: WordCloud +<br>
-          &nbsp;&nbsp;&nbsp;Konlpy (모두 Python 패키지)
-        </p>
-      </div>
-      <div style="padding: 0px">
-        <div id="right">
-          <h2 style="border: pink 3px solid; background-color: white; color: black;">🏋️ RoadMap 🏋️</h2>
+    <div>
+      <div id="grid">
+        <div>
+          <p id="title2" style="border: #00D26A 3px solid; background-color: white; color: black;">🤖 INDEX 🤖</p>
+          <table>
+            <tr>
+              <td>💻</td>
+              <td>✅</td>
+              <td>➡️</td>
+            </tr>
+            <tr>
+              <td>What to do?</td>
+              <td>나만의 <strong style="color:red"><u>웹페이지 만들기</u></strong> 기초</td>
+            </tr>
+            <tr>
+              <td>Language</td>
+              <td>HTML + CSS + JS + Python</td>
+            </tr>
+            <tr>
+              <td>Editor</td>
+              <td><s>Atom</s></td>
+              <td>now unused</td>
+            </tr>
+            <tr>
+              <td>Framework</td>
+              <td>VScode</td>
+              <td>changed at 22-11-30</td>
+            </tr>
+            <tr>
+              <td>Hosting</td>
+              <td>github</td>
+            </tr>
+            <tr>
+              <td>version management</td>
+              <td>git</td>
+            </tr>
+            <tr>
+              <td>comment package</td>
+              <td><s>disqus</s> -> giscus(github app)</td>
+              <td>changed at 22-12-07</td>
+            </tr>
+            <tr>
+              <td>chatting package</td>
+              <td>tawk.to</td>
+            </tr>
+            <tr>
+              <td>navigation css</td>
+              <td>UIVERSE</td>
+            </tr>
+            <tr>
+              <td>wordcloud package</td>
+              <td>WordCloud + Konlpy</td>
+              <td>All them are python packages</td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <p id="title2" style="border: pink 3px solid; background-color: white; color: black;">🏋️ RoadMap 🏋️</p>
           <table>
             <tr>
               <td>시작 날짜</td>
@@ -131,45 +161,48 @@ id -> .firstname
             </tr>
             <tr >
               <td>2022-12-26-월</td>
-              <td ><a href="https://boostcamp.connect.or.kr/guide_ai.html?utm_source=boottent&utm_medium=referral" style="color: rgb(65, 200, 241)">네이버 AI<br>부트캠프 준비</a></td>
-              <td><input type="checkbox"></td>
+              <td >네이버 AI 부트캠프 준비</a></td>
+              <td><input type="checkbox" checked></td>
               <td>2023-01-13-금</td>
-              <td>네이버<br>부스트코스<td>
+              <td>네이버 부스트코스<td>
             </tr>
           </table>
         </div>
-        <div id="right">
+      </div>
+      <div id="grid">
+        <div>
           <img src="wordcloud1.png" id="center_img">
           <p style="text-align: center;">
-            <span style="color: red; font-size: 20px">WordCloud1</span><br>
-            "LINER의 하이라이트를 크롤링하여 <strong style="color:yellow">누적 관심 분야</strong>를 보여줍니다!"
-          </p>
-        </div>
-        <div id="right">
-          <img src="wordcloud2.png" style="width:100%">
-          <p style="text-align: center;">
-            <span style="color: rgb(107, 107, 234); font-size: 20px">WordCloud2</span><br>
+            <span style="color: rgb(107, 107, 234); font-size: 20px">WordCloud1</span><br>
             "LINER의 하이라이트를 크롤링하여 <strong style="color:yellow">최근 관심 키워드</strong>를 보여줍니다!"
           </p>
         </div>
+        <div>
+          <img src="wordcloud2.png" id="center_img">
+          <p style="text-align: center;">
+            <span style="color: red; font-size: 20px">WordCloud2</span><br>
+            "LINER의 하이라이트를 크롤링하여 <strong style="color:yellow">누적 관심 분야</strong>를 보여줍니다!"
+          </p>
+        </div>
       </div>
-      <div style="padding: 0px">
-        <div id="right">
+      <div id="grid">
+        <div>
           <img src="mbti/mbti1.png" id="center_img">
             <p style="text-align: center;">
-              <span style="color: red; font-size: 20px">MBTI1</span><br>
+              <span style="color: rgb(107, 107, 234); font-size: 20px">MBTI1</span><br>
               "가장 최근의 <strong style="color:yellow">MBTI 점수</strong>를 보여줍니다!"
             </p>
         </div>
-        <div id="right">
+        <div>
           <img src="mbti/mbti2.png" id="center_img">
             <p style="text-align: center;">
-              <span style="color: rgb(107, 107, 234); font-size: 20px">MBTI2</span><br>
+              <span style="color: red; font-size: 20px">MBTI2</span><br>
               "2020년 6월부터의 <strong style="color:yellow">MBTI 누적 점수</strong>를 보여줍니다!"
             </p>
         </div>
-      </div>
+      </div> 
     </div>
+    
 
     <!--Start of giscus Script-->
 
