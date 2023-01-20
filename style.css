@@ -9,13 +9,12 @@ body {
   }
 }
 
-#title {
+#header {
   width: 1500px;
-  text-align: center;
   padding: 15px;  
-  margin: 20px;
-  margin-top: 100px;
+  margin: 20px; 
   margin-bottom: 100px;
+  text-align: center;
   font-weight: bold;
   font-size: 65px;
   font-family: 'NanumBarunGothicBold';
@@ -51,7 +50,25 @@ td {
   border-radius: 30px;
 }
 
+#grid2 {
+  display: grid;
+  grid-template-columns: 600px 900px;
+  width: 1500px;
+  margin-left: 20px;
+  margin-bottom: 100px;
+  padding:0px;
+  background-color: rgba(226, 201, 201, 0.116);
+  border: none;
+  border-radius: 30px;
+}
+
+
 #grid div {
+  margin: 0px;
+  padding: 20px;
+}
+
+#grid2 div {
   margin: 0px;
   padding: 20px;
 }
