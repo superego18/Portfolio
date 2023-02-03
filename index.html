@@ -78,64 +78,35 @@ id -> .firstname
           <!-- <img src="./navilogo/types.png" style="width: 50%"> -->
           Hello, Friends!</button>
     </div>
+
+    <script>
+
+      var table_index = [['💻', '➡️', '✅'],['What to do now', 'Create My Portfolio Website', ''], ['Programming Language', 'HTML + CSS + JS + Python', ''], ['Editor', 'Atom', 'now unused'], ['Framework', 'VScode', 'changed at 22-11-30'], ['Hosting', 'Github', ''], ['Version Control System', 'Git', ''], ['Comment System', '@@@', 'changed at 22-12-07'], ['Chatting System', 'tawk.to', ''], ['Visitor Statistics System', 'Google Analytics', ''], ['Navigation Bar Css', 'UIVERSE', ''], ['Wordcloud Packages', 'WordCloud + Konlpy', 'python packages']];
+
+      var table_roadmap = [];
+      
+    </script>
+
     <div>
       <div id="grid">
         <div>
           <p id="title2" style="border: #00D26A 3px solid; background-color: white; color: black;">🤖 INDEX 🤖</p>
           <table>
-            <tr>
-              <td>💻</td>
-              <td>➡️</td>
-              <td>✅</td>
-            </tr>
-            <tr>
-              <td>What to do now</td>
-              <td>Create My Portfolio Website</td>
-            </tr>
-            <tr>
-              <td>Programming Language</td>
-              <td>HTML + CSS + JS + Python</td>
-            </tr>
-            <tr>
-              <td>Editor</td>
-              <td><s>Atom</s></td>
-              <td>now unused</td>
-            </tr>
-            <tr>
-              <td>Framework</td>
-              <td>VScode</td>
-              <td>changed at 22-11-30</td>
-            </tr>
-            <tr>
-              <td>Hosting</td>
-              <td>Github</td>
-            </tr>
-            <tr>
-              <td>Version Control System</td>
-              <td>Git</td>
-            </tr>
-            <tr>
-              <td>Comment System</td>
-              <td><s>disqus</s> -> giscus(Github App)</td>
-              <td>changed at 22-12-07</td>
-            </tr>
-            <tr>
-              <td>Chatting System</td>
-              <td>tawk.to</td>
-            </tr>
-            <tr>
-              <td>Visitor Statistics System</td>
-              <td>Google Analytics</td>
-            </tr>
-            <tr>
-              <td>Navigation Bar Css</td>
-              <td>UIVERSE</td>
-            </tr>
-            <tr>
-              <td>Wordcloud Packages</td>
-              <td>WordCloud + Konlpy</td>
-              <td>python packages</td>
-            </tr>
+            <!-- js로 table database 만들기 -->
+            <script>
+              var i = 0;
+              while(i < table_index.length) {
+                var j = 0;
+                document.write('<tr>')
+                while(j < 3) {
+                  document.write('<td>' + table_index[i][j] + '</td>');
+                  j = j + 1;
+                }
+                document.write('</tr>')
+                i = i + 1;
+              }
+            </script>
+              <!-- <td><s>disqus</s> -> giscus(Github App)</td> -->
           </table>
         </div>
         <div>
