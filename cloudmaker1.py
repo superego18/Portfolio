@@ -13,7 +13,7 @@ service = ChromeService(executable_path=CHROMEDRIVER_PATH)
 
 driver = webdriver.Chrome(service=service, options=options)
 
-delay=0.1
+delay = 0.1
 
 url = 'https://getliner.com/feeds/user/7203684?shareOption=profile'
 
