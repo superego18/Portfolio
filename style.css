@@ -38,18 +38,6 @@ td {
   padding: 5px;
 }
 
-#grid_table {
-  display: grid;
-  grid-template-columns: 600px 900px;
-  width: 1500px;
-  margin-left: 20px;
-  margin-bottom: 100px;
-  padding:0px;
-  background-color: rgba(226, 201, 201, 0.116);
-  border: none;
-  border-radius: 30px;
-}
-
 #grid {
   display: grid;
   grid-template-columns: 750px 750px;
