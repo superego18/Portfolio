@@ -1,30 +1,20 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 from bs4 import BeautifulSoup
-from collections import Counter
 
-options = webdriver.ChromeOptions()
-options.add_experimental_option("excludeSwitches", ["enable-automation"])
-options.add_experimental_option("useAutomationExtension", False)
-CHROMEDRIVER_PATH = './chromedriver.exe'
-service = ChromeService(executable_path=CHROMEDRIVER_PATH)
-
-driver = webdriver.Chrome(service=service, options=options)
-
-delay=0.1
-
-url = 'https://getliner.com/feeds/user/7203684?shareOption=profile'
-
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+url = 'https://getliner.com/user-profile/7203684' # 지속적으로 url 바뀌는 거 확인
 driver.get(url)
 
 time.sleep(1)
 
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
-sec = soup.select_one('section.css-14vqkrf')
-tags = sec.select('ul.css-oediup > ul > li')
+sec = soup.select_one('section.css-auc73u')
+tags = sec.select('li.css-zr54ay')
+driver.quit()
 
 import re
 
@@ -37,7 +27,7 @@ for tag in tags:
     # {"id":7382319,"name":"헬스케어 스타트업","emoji":null,"order":13,"status":"normal","description":"","openState":"public","hashKey":"NzM4MjMxOQ==","savedPageCount":1,"viewCount":0}
     # => 정규표현식으로 해결해보자!
     name = re.findall('"name":"(.*?)",', attr)[0]
-    page = re.findall('"savedPageCount":(.*?),', attr)[0]
+    page = re.findall('"savedPageCount":(.*?)}', attr)[0]
     page = int(page)
     split_str = ', '
     if split_str in name:

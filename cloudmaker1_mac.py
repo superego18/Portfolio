@@ -8,7 +8,6 @@ from PIL import Image
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
 from wordcloud import WordCloud
 
 #파이썬 인터프리터 설정: shift+command+p => /usr/bin/python3 => Python 3.9.6 64-bit
@@ -24,10 +23,6 @@ RANDOM_STATE = 43
 
 # Initialize Chrome driver
 options = webdriver.ChromeOptions()
-# options.add_argument('headless')
-# options.add_argument('window-size=1920x1080')
-# options.add_argument("disable-gpu")
-# driver = webdriver.Chrome('chromedriver', chrome_options=options)
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # Open URL

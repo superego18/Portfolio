@@ -1,33 +1,23 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
-import time
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
+import time
 from collections import Counter
 
-options = webdriver.ChromeOptions()
-options.add_experimental_option("excludeSwitches", ["enable-automation"])
-options.add_experimental_option("useAutomationExtension", False)
-CHROMEDRIVER_PATH = './chromedriver.exe'
-service = ChromeService(executable_path=CHROMEDRIVER_PATH)
-
-driver = webdriver.Chrome(service=service, options=options)
-
-delay = 0.1
-
-url = 'https://getliner.com/feeds/user/7203684?shareOption=profile'
-
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+url = 'https://getliner.com/user-profile/7203684' # 지속적으로 url 바뀌는 거 확인
 driver.get(url)
 
 time.sleep(1)
 
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
-sec = soup.select_one('section.css-0')
-titles = sec.select('div.css-w3af2n > h2.css-o7qmg8')
-contents = sec.select('div.css-w3af2n > section > section > div > section > div > div > div > p')
+sec = soup.select_one('section.css-146yy6b') # 지속적으로 sec 바뀌는 거 확인
+titles = [title.get_text() for title in sec.select('span.css-137vrda')]
+contents = [content.get_text() for content in sec.select('span.css-dtt6h1')]
 
-time.sleep(1)
+driver.quit()
 
 list=[]
 
@@ -36,14 +26,12 @@ from konlpy.tag import Okt
 okt=Okt()
 
 for title in titles:
-    line1 = title.get_text()
-    words = okt.nouns(line1)
+    words = okt.nouns(title)
     words2 = [n for n in words if len(n) > 1]
     list.extend(words2)
 
 for content in contents:
-    line2 = content.get_text()
-    words = okt.nouns(line2)
+    words = okt.nouns(content)
     words2 = [n for n in words if len(n) > 1]
     list.extend(words2)
 
@@ -66,7 +54,6 @@ remove_list=['버스']
 for unuse in remove_list:
     while unuse in list:
         list.remove(unuse)
-
 
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
