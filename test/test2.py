@@ -1,27 +1,21 @@
-# 축구 팀 이름과 초기 전적을 저장할 딕셔너리
-teams = {"A": [0, 0, 0], "B": [0, 0, 0], "C": [0, 0, 0], "D": [0, 0, 0]}
+from matplotlib.patches import FancyBboxPatch
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 
-# 축구 경기 결과를 입력받음
-while True:
-  # 축구 경기 결과를 입력 받음
-  result = input("Enter game result (A B): ")
+# Generate word cloud
+text = "some text data to generate a word cloud"
+wordcloud = WordCloud(width=800, height=800, background_color='white').generate(text)
 
-  # 입력이 종료되면 반복문을 종료함
-  if result == "":
-    break
+# create a rectangle with rounded corners
+rect = FancyBboxPatch((0, 0), 800, 800, boxstyle="round, pad=0.1", ec="gray", lw=1, fc="lightgray")
 
-  # 입력된 축구 경기 결과를 공백으로 분리하여 각 팀의 이름을 추출
-  team1, team2 = result.split()
+# create a figure and add the rectangle and word cloud to it
+fig, ax = plt.subplots(figsize=(8, 8))
+ax.add_patch(rect)
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis('off')
 
-  # 경기 결과를 입력 받음
-  score1 = int(input("Enter score for team " + team1 + ": "))
-  score2 = int(input("Enter score for team " + team2 + ": "))
+plt.show()
 
-  # 각 팀의 전적을 갱신
-  if score1 > score2:
-    # team1 승리
-    teams[team1][0] += 1  # 승수 증가
-    teams[team2][2] += 1  # 패수 증가
-  elif score1 < score2:
-    # team2 승리
-    teams[team1][2] += 1  # 패수
+# save word cloud
+wordcloud.to_file('wordcloud.png')
