@@ -1,904 +1,3911 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Pandas Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/pandas@1.0.3/dist/pandas.min.js"></script>
-  
-</head>
-<body>
-  <table>
-    <thead>
+<style type="text/css">
+  .tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  .tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+  }
+  .tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+  }
+  .tg .tg-0lax {
+    text-align: left;
+    vertical-align: top;
+  }
+</style>
+<table class="tg">
+  <thead>
     <tr>
-            <th>일자</th>
-            <th>강의명</th>
-            <th>강의링크</th>
+      <th class="tg-0lax">훈련일자</th>
+      <th class="tg-0lax">구분</th>
+      <th class="tg-0lax">시작시간</th>
+      <th class="tg-0lax">종료시간</th>
+      <th class="tg-0lax">적용시간(분)</th>
+      <th class="tg-0lax">훈련강사</th>
+      <th class="tg-0lax">교육장소(강의실)</th>
+      <th class="tg-0lax">교과목</th>
+      <th class="tg-0lax">NCS능력단위</th>
     </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1일차</td>
-            <td>Python Data Structure</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Python Object Oriented Programming</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td>2일차</td>
-            <td>Module and Project</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>File/Exception/Log Handling&nbsp;</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td>3일차</td>
-            <td>Numpy&nbsp;</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>벡터가 뭐예요?</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td>4일차</td>
-            <td>행렬이 뭐예요?</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>선형방정식과 선형 시스템</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>선형결합</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td>5일차</td>
-            <td>선형독립과 선형종속</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>부분공간의 기저와 차원</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td>6일차</td>
-            <td>딥러닝 기본 용어 설명</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Historical Review</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>경사하강법 - 순한맛</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td>7일차</td>
-            <td>딥러닝 학습방법 이해하기</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>뉴럴 네트워크 - MLP</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>선형변환</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>선형변환 with Neural Networks</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td>8일차</td>
-            <td>베이즈 통계학 맛보기&nbsp;</td>
-            <td>바로가기</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>최적화의 주요 용어 이해하기</td>
-            <td>바로가기</td>
-        </tr>
-    
-        <tr class="tac notice3">
-        
-            
-                
-                    
-                
-                
-                
-                
-            
-            <td colspan="2"
-                class="dt1-20230716"
-                data-itemtype="20230716"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: #ff3333;">
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230717"
-                data-itemtype="20230717"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230717')" title="새창(열림)">
-                        07월17일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230718"
-                data-itemtype="20230718"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230718')" title="새창(열림)">
-                        07월18일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230719"
-                data-itemtype="20230719"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230719')" title="새창(열림)">
-                        07월19일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230720"
-                data-itemtype="20230720"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230720')" title="새창(열림)">
-                        07월20일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230721"
-                data-itemtype="20230721"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230721')" title="새창(열림)">
-                        07월21일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                    
-                
-                
-                
-            
-            <td colspan="2"
-                class="dt1-20230722"
-                data-itemtype="20230722"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: #3333aa;">
-                
-            </td>
-        
-        </tr>
-        <tr class="tac notice4">
-            
-                <td class="btlL dt2-20230716"
-                    data-itemtype="20230716"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230716"
-                    data-itemtype="20230716"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230717"
-                    data-itemtype="20230717"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230717')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230717"
-                    data-itemtype="20230717"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230718"
-                    data-itemtype="20230718"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230718')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230718"
-                    data-itemtype="20230718"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230719"
-                    data-itemtype="20230719"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230719')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230719"
-                    data-itemtype="20230719"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230720"
-                    data-itemtype="20230720"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230720')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230720"
-                    data-itemtype="20230720"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230721"
-                    data-itemtype="20230721"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230721')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230721"
-                    data-itemtype="20230721"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL dt2-20230722"
-                    data-itemtype="20230722"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230722"
-                    data-itemtype="20230722"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-        </tr>
-        <tr class="tac notice4">
-            
-                <td class="btlL dt2-20230716"
-                    data-itemtype="20230716"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230716"
-                    data-itemtype="20230716"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230717"
-                    data-itemtype="20230717"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230717')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230717"
-                    data-itemtype="20230717"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230718"
-                    data-itemtype="20230718"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230718')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230718"
-                    data-itemtype="20230718"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230719"
-                    data-itemtype="20230719"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230719')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230719"
-                    data-itemtype="20230719"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230720"
-                    data-itemtype="20230720"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230720')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230720"
-                    data-itemtype="20230720"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230721"
-                    data-itemtype="20230721"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230721')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230721"
-                    data-itemtype="20230721"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL dt2-20230722"
-                    data-itemtype="20230722"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230722"
-                    data-itemtype="20230722"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-        </tr>
-    
-        <tr class="tac notice3">
-        
-            
-                
-                    
-                
-                
-                
-                
-            
-            <td colspan="2"
-                class="dt1-20230723"
-                data-itemtype="20230723"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: #ff3333;">
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230724"
-                data-itemtype="20230724"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230724')" title="새창(열림)">
-                        07월24일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230725"
-                data-itemtype="20230725"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230725')" title="새창(열림)">
-                        07월25일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230726"
-                data-itemtype="20230726"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230726')" title="새창(열림)">
-                        07월26일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="dt1-20230727"
-                data-itemtype="20230727"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-            </td>
-        
-            
-                
-                
-                
-                
-                    
-                
-            
-            <td colspan="2"
-                class="timtbl-cal dt1-20230728"
-                data-itemtype="20230728"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: black;">
-                
-                    <a href="javascript:timtblPop('20230728')" title="새창(열림)">
-                        07월28일 (08시간)
-                        <br />
-                        
-                    </a>
-                
-            </td>
-        
-            
-                
-                
-                    
-                
-                
-                
-            
-            <td colspan="2"
-                class="dt1-20230729"
-                data-itemtype="20230729"
-                style="padding: 12px 4px; font-size: 12px; background-color: #eff9f8; color: #3333aa;">
-                
-            </td>
-        
-        </tr>
-        <tr class="tac notice4">
-            
-                <td class="btlL dt2-20230723"
-                    data-itemtype="20230723"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230723"
-                    data-itemtype="20230723"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230724"
-                    data-itemtype="20230724"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230724')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230724"
-                    data-itemtype="20230724"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230725"
-                    data-itemtype="20230725"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230725')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230725"
-                    data-itemtype="20230725"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230726"
-                    data-itemtype="20230726"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230726')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230726"
-                    data-itemtype="20230726"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL dt2-20230727"
-                    data-itemtype="20230727"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230727"
-                    data-itemtype="20230727"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230728"
-                    data-itemtype="20230728"
-                    style="background-color: #fcfcfc;">
-                    
-                        <a href="javascript:timtblPop('20230728')" title="새창(열림)">훈련</a>
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230728"
-                    data-itemtype="20230728"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            
-                            09:00~18:00
-                        
-                    
-                </td>
-            
-                <td class="btlL dt2-20230729"
-                    data-itemtype="20230729"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230729"
-                    data-itemtype="20230729"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-        </tr>
-        <tr class="tac notice4">
-            
-                <td class="btlL dt2-20230723"
-                    data-itemtype="20230723"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230723"
-                    data-itemtype="20230723"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230724"
-                    data-itemtype="20230724"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230724')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230724"
-                    data-itemtype="20230724"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230725"
-                    data-itemtype="20230725"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230725')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230725"
-                    data-itemtype="20230725"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230726"
-                    data-itemtype="20230726"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230726')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230726"
-                    data-itemtype="20230726"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL dt2-20230727"
-                    data-itemtype="20230727"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230727"
-                    data-itemtype="20230727"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-                <td class="btlL timtbl-cal dt2-20230728"
-                    data-itemtype="20230728"
-                    style="background-color: #fcfcfc;">
-                    
-                        
-                        
-                            <a href="javascript:timtblPop('20230728')" title="새창(열림)">점심</a>
-                        
-                    
-                </td>
-                <td class="timtbl-cal dt3-20230728"
-                    data-itemtype="20230728"
-                    style="background-color: #ffffff;">
-                    
-                        
-                        
-                            12:00~13:00
-                        
-                    
-                </td>
-            
-                <td class="btlL dt2-20230729"
-                    data-itemtype="20230729"
-                    style="background-color: #fcfcfc;">
-                    
-                </td>
-                <td class="dt3-20230729"
-                    data-itemtype="20230729"
-                    style="background-color: #ffffff;">
-                    
-                        &nbsp;
-                        
-                    
-                </td>
-            
-        </tr>
-    
-    </tbody>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="tg-0lax">2023-01-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-26</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-27</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-30</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-31</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-31</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-01-31</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-02</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-03</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-06</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-07</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-08</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-08</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-08</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-08</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-09</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-13</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-14</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-16</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-17</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-20</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-21</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-22</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-22</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-22</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-22</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-23</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-27</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">빈*범</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)통계 데이터사이언스</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-28</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-02-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-02</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-03</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-06</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-07</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*수</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*환</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-09</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*환</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-10</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*환</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-10</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-10</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*환</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*환</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-13</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-14</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*형</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)파이선 프로그래밍과 과학계산</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-16</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-17</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-20</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-21</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-23</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">천*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-24</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-24</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-24</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-27</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">천*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-28</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">천*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-30</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">천*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-31</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-31</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-03-31</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-03</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">천*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-04</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-04</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-04</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-06</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-07</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-10</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-10</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-10</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">천*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-11</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-11</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-11</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-13</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-14</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">11:00</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">천*희</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크와 암호</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">11:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-17</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-18</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-18</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-18</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">김*식</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)디지털 화폐와금융</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">11:00</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">김*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)빅데이터, 핀테크 응용사례</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">11:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-20</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-21</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">이*욱</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)기계학습과 딥러닝</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-24</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-24</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-24</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-25</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-25</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-25</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-27</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-28</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-04-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-02</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">장*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)블록체인</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-04</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-04</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-04</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-08</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-08</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-08</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">신*필</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 산업응용</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-09</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-11</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-11</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-11</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-12</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-12</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-12</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-15</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-15</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-15</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-16</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-18</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-18</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-18</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-19</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-19</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-19</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-22</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-22</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-22</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">정*섭</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)핀테크 서비스 법</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-23</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-25</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-25</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-25</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">박*진</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">
+        (비NCS)핀테크 제품, 서비스 개발을 위한 이노베이션 방법론
+      </td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-26</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-29</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-29</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-29</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-30</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">18:30</td>
+      <td class="tg-0lax">240</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-31</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">11:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-31</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">90</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-05-31</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">14:30</td>
+      <td class="tg-0lax">16:30</td>
+      <td class="tg-0lax">120</td>
+      <td class="tg-0lax">양*호</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)알고리즘 트레이딩 로보어드바이저</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-01</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-01</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-01</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-02</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-02</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-05</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-05</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-05</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-07</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-08</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-08</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-08</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-09</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-09</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-12</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-12</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-12</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-13</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-14</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-15</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-15</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-15</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-16</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-16</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-19</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-19</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-19</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-20</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-21</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-22</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-22</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-22</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-23</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-23</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-26</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-27</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-27</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-28</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-29</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-29</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-29</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-30</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-06-30</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-03</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-03</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-04</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-04</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-04</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-05</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-05</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-05</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-06</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-06</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-07</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-07</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-10</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-10</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-10</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-11</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-11</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-11</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-12</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-12</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-12</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-13</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-13</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-14</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-14</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-17</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-17</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-18</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-18</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-18</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-19</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-19</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-19</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-20</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-20</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-21</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-21</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-24</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-24</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-24</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-25</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-25</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-25</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-26</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-26</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">09:00</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">180</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-28</td>
+      <td class="tg-0lax">점심</td>
+      <td class="tg-0lax">12:00</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">60</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax">-</td>
+      <td class="tg-0lax"></td>
+      <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">2023-07-28</td>
+      <td class="tg-0lax">훈련</td>
+      <td class="tg-0lax">13:00</td>
+      <td class="tg-0lax">18:00</td>
+      <td class="tg-0lax">300</td>
+      <td class="tg-0lax">류*관</td>
+      <td class="tg-0lax">호암교수회관 중세미나실(실습겸용강의실)</td>
+      <td class="tg-0lax">(비NCS)현장실습</td>
+      <td class="tg-0lax"></td>
+    </tr>
+  </tbody>
 </table>
