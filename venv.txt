@@ -1,0 +1,16 @@
+가상환경 만드는 법 
+파이썬 자체 venv 이용
+
+# window
+py -3.8 -m venv venv
+venv/Scripts/activate
+
+# mac
+python3.8 -m venv ./venv
+source venv/bin/activate
+
+만들고 나서
+pip install --upgrade pip
+pip install -r requirements(_mac).txts
+
+(가상환경 밖에서) pip freeze > requirements.txt

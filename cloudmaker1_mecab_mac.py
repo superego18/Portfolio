@@ -36,8 +36,8 @@ contents = [content.get_text() for content in sec.select('span.css-dtt6h1')]
 driver.quit()
 
 
-# Extract words using Mecab
-mecab = Mecab("C:\mecab\mecab-ko-dic")
+# Extract words using Mecabcd mecab-python-0.996
+mecab = Mecab()
 words = [word for line in titles + contents for word in mecab.nouns(line) if len(word) > 1]
 
 # Generate word cloud
@@ -60,4 +60,4 @@ plt.show(block=False)
 plt.pause(3)
 plt.close()
 
-wordcloud.to_file('wordcloud_image/wordcloud1_mecab.png')
+wordcloud.to_file('wordcloud_image/wordcloud1_mecab_mac.png')
