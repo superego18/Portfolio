@@ -60,4 +60,4 @@ plt.show(block=False)
 plt.pause(3)
 plt.close()
 
-wordcloud.to_file('wordcloud_image\wordcloud1_mecab.png')
+wordcloud.to_file('wordcloud_image/wordcloud1_mecab.png')
