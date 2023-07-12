@@ -1,2 +1,2 @@
-python --version (interpreter)
+python --version (interpreter)(venv)
 Python 3.8.0 64-bit

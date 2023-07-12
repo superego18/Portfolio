@@ -60,7 +60,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
 
-font = "NanumBarunGothicBold"
+font = "fonts/NanumBarunGothicBold"
 font_path = "%s.ttf" % font
 
 # https://noanswercode.tistory.com/8 참고
@@ -81,4 +81,4 @@ plt.show(block=False)
 plt.pause(3) 
 plt.close()
 
-wordcloud.to_file('wordcloud1.png')
+wordcloud.to_file('wordcloud_image\wordcloud1.png')
